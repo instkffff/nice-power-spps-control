@@ -1,9 +1,9 @@
-import { setA } from './setA.js'
-import { setV } from './setV.js'
-import { setRemote } from './setRemote.js'
-import { setOutput } from './setOutput.js'
-import { readStatus } from './readStatus.js'
-import { parseResponse } from './callback.js'
+import { setA } from './src/set/setA.js'
+import { setV } from './src/set/setV.js'
+import { setRemote } from './src/set/setRemote.js'
+import { setOutput } from './src/set/setOutput.js'
+import { readStatus } from './src/set/readStatus.js'
+import { parseResponse } from './src/callback.js'
 
 import { SerialPort } from 'serialport'
 

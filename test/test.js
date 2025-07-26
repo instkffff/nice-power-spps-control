@@ -6,7 +6,7 @@ import {
     SetRemote,
     SetOutput,
     ReadStatus
-} from "./main.js";
+} from "../main.js";
 
 async function runTest() {
     try {
