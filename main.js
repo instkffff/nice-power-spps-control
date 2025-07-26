@@ -12,10 +12,10 @@ let globalPort = null;
 
 
 // 打开串口 COM4 9600 8 1 none
-async function openPort() {
+async function openPort(port) {
     return new Promise((resolve, reject) => {
         globalPort = new SerialPort({
-            path: 'COM4',
+            path: port,
             baudRate: 9600,
             dataBits: 8,
             stopBits: 1,
