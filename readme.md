@@ -44,7 +44,7 @@ software/
 ## 使用方法
 
 ```javascript
-import { openPort, SetV, SetA, SetRemote, SetOutput, ReadStatus } from './main.js';
+import { openPort, closePort, SetV, SetA, SetRemote, SetOutput, ReadStatus } from './main.js';
 
 // 打开串口
 await openPort('COM4');
