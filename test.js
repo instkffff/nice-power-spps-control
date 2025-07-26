@@ -1,5 +1,6 @@
 import {
     openPort,
+    closePort,
     SetA,
     SetV,
     SetRemote,
@@ -58,6 +59,10 @@ async function runTest() {
         console.log('完整响应解析:', JSON.stringify(statusResponse, null, 2));
         
         console.log('测试完成!');
+
+        // 关闭端口
+        await closePort();
+        console.log('串口关闭成功');
         
     } catch (error) {
         console.error('测试过程中出现错误:', error.message);

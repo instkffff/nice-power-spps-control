@@ -10,6 +10,7 @@ import { SerialPort } from 'serialport'
 // 全局串口对象
 let globalPort = null;
 
+
 // 打开串口 COM4 9600 8 1 none
 async function openPort() {
     return new Promise((resolve, reject) => {
@@ -29,6 +30,27 @@ async function openPort() {
         globalPort.on('error', (err) => {
             console.error('串口打开失败:', err.message);
             reject(err);
+        });
+    });
+}
+
+// 添加关闭串口函数
+async function closePort() {
+    return new Promise((resolve, reject) => {
+        if (!globalPort) {
+            reject(new Error('串口未打开'));
+            return;
+        }
+        
+        globalPort.close((err) => {
+            if (err) {
+                console.error('串口关闭失败:', err.message);
+                reject(err);
+            } else {
+                console.log('串口 COM4 关闭成功');
+                globalPort = null;
+                resolve();
+            }
         });
     });
 }
@@ -142,7 +164,8 @@ async function ReadStatus() {
 
 // 导出函数
 export { 
-    openPort, 
+    openPort,
+    closePort,
     SetA, 
     SetV, 
     SetRemote, 
