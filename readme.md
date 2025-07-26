@@ -6,7 +6,7 @@
 
 ## 文件结构
 
-```
+```tree
 software/
 ├── main.js              # 主程序文件
 ├── src/
@@ -55,11 +55,11 @@ await SetV(12);
 // 设置电流为2A
 await SetA(2);
 
-// 启用远程控制
-await SetRemote(1);
+// 启用远程控制 on/off
+await SetRemote(on);
 
-// 打开输出
-await SetOutput(1);
+// 打开输出 on/off
+await SetOutput(on);
 
 // 读取状态
 const status = await ReadStatus();
@@ -71,6 +71,7 @@ await closePort();
 ## 错误处理
 
 程序包含完整的错误处理机制：
+
 - 串口打开/关闭错误
 - 命令响应超时 (3秒)
 - 数据解析错误
