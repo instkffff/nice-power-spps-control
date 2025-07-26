@@ -11,7 +11,7 @@ import {
 async function runTest() {
     try {
         // 打开串口
-        await openPort();
+        await openPort('COM4');
         console.log('串口打开成功\n');
         
         // 等待串口稳定
